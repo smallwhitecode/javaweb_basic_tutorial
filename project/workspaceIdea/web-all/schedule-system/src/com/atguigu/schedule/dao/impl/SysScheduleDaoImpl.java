@@ -1,0 +1,56 @@
+package com.atguigu.schedule.dao.impl;
+
+import com.atguigu.schedule.dao.BaseDao;
+import com.atguigu.schedule.dao.SysScheduleDao;
+import com.atguigu.schedule.pojo.SysSchedule;
+import com.atguigu.schedule.util.JDBCUtil;
+
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * @Author:李强
+ * @Date:2025/9/10
+ * @Description:web-all
+ */
+
+public class SysScheduleDaoImpl extends BaseDao implements SysScheduleDao {
+    @Override
+    public int addSchedule(SysSchedule schedule) {
+        String sql = "insert into sys_schedule values (null,?,?,?)";
+        int rows = baseUpdate(sql, schedule.getUid(), schedule.getTitle(), schedule.getCompleted());
+        return rows;
+    }
+
+    @Override
+    public List<SysSchedule> findAll() {
+        String sql = "select * from sys_schedule";
+        List<SysSchedule> list = baseQuery(SysSchedule.class, sql);
+        return list;
+    }
+
+    @Override
+    public List<SysSchedule> findItemListByUid(int uid) {
+        String sql = "select sid,uid,title,completed from sys_schedule where uid =?";
+        List<SysSchedule> list = baseQuery(SysSchedule.class, sql, uid);
+        return list;
+    }
+
+    @Override
+    public Integer addDefault(int uid) {
+        String sql = "insert into sys_schedule values (null,?,'请输入日程',0)";
+        return baseUpdate(sql, uid);
+    }
+
+    @Override
+    public Integer updateSchedule(SysSchedule sysSchedule) {
+        String sql = "update sys_schedule set title=?,completed=? where sid = ? ";
+        return baseUpdate(sql, sysSchedule.getTitle(), sysSchedule.getCompleted(), sysSchedule.getSid());
+    }
+
+    @Override
+    public Integer removeSchedule(int sid) {
+        String sql = "delete from sys_schedule where sid=?";
+        return baseUpdate(sql, sid);
+    }
+}

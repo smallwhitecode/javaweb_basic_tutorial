@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+
+    // 1 let 不能重复声明
+    /* var i = 10;
+    var i = 20; // 可以
+
+    let j = 10;
+    let j = 'zhangsan'; // 报错 */
+
+    // 2 let有块级作用域，非函数的花括号遇见let会有块级作用域，也就是只能在花括号里面访问
+    /*
+      let a = 1
+      var b = 2
+    }
+    console.log(a);  // a is not defined   花括号外面无法访问
+    console.log(b);  // 可以正常输出 */
+
+    //3. let不会预解析进行变量提升
+    /*console.log(test) //可以     但是值为undefined
+    var test = 'test'
+    console.log(test1) //不可以  let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。
+    let test1 = 'test1' */
+
+
+    //4、let定义的全局变量不会作为window的属性
+    /* var a = 100   // a会变成window对象的属性
+    console.log(window.a) //100
+    let b = 200
+    console.log(window.b) //undefined */
+
+    // 5、let在es6中推荐优先使用
+
+    // 6、const 就是不可修改的let，final修饰的变量
+    /* let a = 10;
+    a=20;
+
+    const b = 30;
+    b=40; //报错  Assignment to constant variable.
+
+    const PI = 3.14; // 常量一般大写
+
+    const techers = ["张老师","李老师","王老师"];
+    techers.push("赵老师") // 可以 */
+
+    /* 模版字符串   字符串换行和 字符串拼接问题 */
+    let city = '北京';
+    let info =
+        "<ul>" +
+        "<li>JAVA</li>" +
+        "<li>"+city+"</li>" +
+        "<li>VUE</li>" +
+        "</ul>"
+
+    let str = `<ul>
+                  <li></li>
+                  <li></li>
+                  <li>${city}</li>
+                  <li></li>
+                  <li></li>
+                </ul>`
+    console.log(str);
+</script>
+</head>
+<body>
+
+</body>
+</html>

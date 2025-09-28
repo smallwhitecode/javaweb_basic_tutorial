@@ -1,0 +1,25 @@
+package com.atguigu.servlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ * @Author:李强
+ * @Date:2025/9/9
+ * @Description:web-all
+ */
+
+@WebServlet("/servletB")
+public class ServletB extends HttpServlet {
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("servletB 执行了");
+
+        String money = req.getParameter("money");
+        System.out.println("servletA获得参数：money:" + money);
+    }
+}

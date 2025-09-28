@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      1、事件的绑定方式
+        1、通过元素的属性绑定  on***
+        2、通过DOM编程动态绑定
+        注意事项：
+          1、一个事件可以同时绑定多个函数
+          2、一个元素可以同时绑定多个事件
+
+      2、常用事件
+        1、鼠标事件
+          click  单击
+          dblclick  双击
+          mouseover  鼠标移入
+          mouseout  鼠标移出
+          mousedown  鼠标按下
+          mouseup  鼠标抬起
+
+        2、键盘事件
+          keydown  按键按下
+          keyup  按键抬起
+          keypress  按键按下并抬起
+
+        文本框事件
+          focus  获取焦点
+          blur  失去焦点
+          change  内容改变并失去焦点
+
+        页面事件
+          load  页面加载完成后触发
+          resize  窗口大小改变时触发
+          scroll  滚动条滚动时触发
+    */
+  </script>
+
+  <script>
+    // 页面加载完毕事件,浏览器加载完整个文档行为
+    window.onload = function () {
+      var in1 = document.getElementById("in1");
+      // 通过DOM编程绑定事件
+      in1.onchange = testChange
+
+      var btn1 = document.getElementById("btn1");
+      btn1.onclick = function () {
+        console.log("按钮点击了")
+        // 调用事件方法触发事件
+        in1.onchange()
+      }
+    }
+    function testChange() {
+      console.log("内容改变")
+      console.log(event.target.value);
+    }
+  </script>
+</head>
+
+<body>
+  <input id="in1" type="text" />
+  <br>
+  <button id="btn1">按钮</button>
+
+</body>
+
+</html>

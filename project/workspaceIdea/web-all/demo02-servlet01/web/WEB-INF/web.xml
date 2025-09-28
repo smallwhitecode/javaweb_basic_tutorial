@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--
+    1、配置Servlet类，并起一个别名
+        servlet-class 告诉tomcat对应的要实例化的Servlet类
+        servlet-name 用于关联请求的映射路径
+    -->
+    <servlet>
+        <servlet-name>userServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.UserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>userServlet</servlet-name>
+        <url-pattern>/userServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet>
+        <servlet-name>servlet1</servlet-name>
+        <servlet-class>com.atguigu.servlet.Servlet1</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>servlet1</servlet-name>
+        <url-pattern>/s1</url-pattern>
+    </servlet-mapping>-->
+
+<!--    <servlet>
+        <servlet-name>servletLifeCycle</servlet-name>
+        <servlet-class>com.atguigu.servlet.ServletLifeCycle</servlet-class>
+        &lt;!&ndash;load-on-startup
+            如果配置的是正整数则表示容器在启动时就要实例化Servlet,
+            数字表示的是实例化的顺序
+            默认值是-1  含义是 tomcat启动时不会实例化该servlet
+            其他正整数   15  含义是tomcat在启动时，实例化该servlet的顺序
+                            如果序号冲突了，tomcat会自动协调启动顺序
+        &ndash;&gt;
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletLifeCycle</servlet-name>
+        <url-pattern>/servletLiftCycle</url-pattern>
+    </servlet-mapping>-->
+</web-app>

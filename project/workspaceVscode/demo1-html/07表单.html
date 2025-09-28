@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="08welcome.html" method="get">
+    <input type="hidden" name="id" value="123" />
+    <input type="text" name="pid" value="123" readonly="readonly"/> <br>
+    <input type="text" name="tid" value="123" disabled/> <br>
+    用户名 <input type="text" name="username" /> <br>
+    密&nbsp;&nbsp;&nbsp;码 <input type="password" name="password" /> <br>
+    性&nbsp;&nbsp;&nbsp;别 <input type="radio" name="sex" value="男" checked />男
+                           <input type="radio" name="sex" value="女" />女 <br>
+    爱&nbsp;&nbsp;&nbsp;好 <input type="checkbox" name="hobby" value="篮球" checked />篮球
+                           <input type="checkbox" name="hobby" value="足球" />足球
+                           <input type="checkbox" name="hobby" value="乒乓球" />乒乓球 <br>
+    个人简介 <textarea name="info" cols="30" rows="5"></textarea> <br>
+    籍贯 <select name="city">
+            <option value="北京">北京</option>
+            <option value="上海" selected>上海</option>
+            <option value="广州">广州</option>
+            <option value="深圳">深圳</option>
+          </select> <br>
+    头像 <input type="file" name="pic" /> <br>
+    <input type="submit" value="登录" />
+    <input type="reset" value="重置" />
+  </form>
+</body>
+</html>

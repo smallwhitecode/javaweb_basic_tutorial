@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let arr = [11, 22, 33, 44, 55];
+    // 使用解构表达式取出数据中的元素
+    let [a, b, c, d, e = 10] = arr;
+    console.log(a, b, c, d, e); // 11 22 33 44 10->55
+
+    let person = {
+      name: '张三',
+      age: 20
+    }
+    console.log(person.name, person.age); // 张三 20
+    //使用解构表达式获取对象的属性值
+    let { age, name } = person;
+    console.log(name, age); // 张三 20
+
+    // 解构表达式引用在方法的参数列表
+    function showArr([a,b,c=10]){
+      console.log(a,b,c);
+    }
+    showArr(arr); // 11 22 33
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

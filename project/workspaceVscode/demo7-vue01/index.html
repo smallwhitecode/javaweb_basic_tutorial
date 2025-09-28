@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="js/vue.js"></script>
+
+  <div>
+    <h1 >hello vue</h1>
+
+    <button>change</button>
+  </div>
+
+  <script>
+    //组合api
+      const app = Vue.createApp({
+        // 在setup内部自由声明数据和方法即可!最终返回!
+        setup() {
+          //定义数据
+          //在VUE中实现DOM的思路是: 通过修改修数据而影响页面元素
+          // vue3中,数据默认不是响应式的,需要加ref或者reactive处理,后面会详细讲解
+          let inputType = 'text'
+          let headline = 'hello vue3'
+          let article = 'vue is awesome'
+          let colorStyle = { 'color': 'red' }
+          // 定义函数
+          let sayHello = () => {
+            alert("hello Vue")
+          }
+          //在setup函数中,return返回的数据和函数可以在html使用
+          return {
+            inputType,
+            headline,
+            article,
+            colorStyle,
+            sayHello
+          }
+        }
+      });
+      //挂载到视图
+      app.mount("#app");
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      /*
+      1、数据
+        1、数组的创建方式
+        2、数组的API
+
+        */
+
+  var fruits = ["苹果", "榴莲","香蕉", "橘子","榴莲"];
+  var fruits2 = ["apple", "banan", "orange"];
+  var fruitsAll = fruits.concat(fruits2); //合并两个数组，返回一个新数组
+  console.log(fruits);
+  console.log(fruits2);
+  console.log(fruitsAll);
+  // 移除并返回最后一个元素
+  var lastFruit = fruitsAll.pop();
+  console.log(lastFruit);
+  console.log(fruitsAll);
+  // 从尾端增加元素并返回长度
+  var len = fruitsAll.push("葡萄");
+  console.log(len);
+  console.log(fruitsAll);
+  //查找榴莲
+  var index1 = fruitsAll.indexOf("榴莲");
+  var index2 = fruitsAll.lastIndexOf("榴莲");
+  console.log(index1); //1
+  console.log(index2); //4
+  // 反转
+  fruitsAll.reverse();
+  console.log(fruitsAll);
+  // 转换为字符串
+  var str = fruitsAll.join("-");
+  console.log(str);
+  // 截取数据
+  console.log(fruitsAll.slice(1,4)); //从索引1开始，截取到索引4（不包含4）
+  // 移除或添加数据
+  console.log(fruitsAll);
+  fruitsAll.splice(1,2,"西瓜","火龙果"); //从索引1开始，移除2个元素，并添加两个元素
+  console.log(fruitsAll);
+
+  // 创建数组
+  // var arr = new Array();
+  // var arr = new Array(5); //创建一个长度为5的数组
+  // var arr = new Array("list", 1, true)
+  // var arr = ["list", 1, true]; //推荐
+  // console.log(arr);
+  // console.log(arr.length);
+  // // 向数据中添加数据
+  // arr[0] = "张三";
+  // arr[1] = "李四";
+  // console.log(arr);
+  // console.log(arr.length);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
